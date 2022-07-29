@@ -163,6 +163,7 @@ public class VideoController {
             int rotation = activity.getWindowManager().getDefaultDisplay().getRotation();
             Log.d(TAG, "setUpMediaRecorder: " + rotation);
 
+            //用于监听存储是否超过阈值
             mediaRecorder.setOnInfoListener(new MediaRecorder.OnInfoListener() {
                 private String TAG = "MediaRecorder info listener";
                 @SuppressLint("NewApi")
@@ -236,10 +237,16 @@ public class VideoController {
                 break;
             }
         }
-        //获取纬度
-        double lat = bestLocation.getLatitude();
-        //获取经度
-        double lng = bestLocation.getLongitude();
+        double lat,lng;
+        if(bestLocation !=null){
+
+            //获取纬度
+           lat = bestLocation.getLatitude();
+            //获取经度
+            lng = bestLocation.getLongitude();
+        }else {
+            lat=lng=0;
+        }
         Map<String, String> map = new HashMap<>();
         map.put("longitude", decimalToDMS(lng));
         map.put("latitude", decimalToDMS(lat));

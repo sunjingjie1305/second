@@ -241,8 +241,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     maxPreviewWidth = displaySize.y;
                     maxPreviewHeight = displaySize.x;
                 }
-                int MAX_PREVIEW_WIDTH = 2048;
-                int MAX_PREVIEW_HEIGHT = 1536;
+                int MAX_PREVIEW_WIDTH = 1280;
+                int MAX_PREVIEW_HEIGHT = 960;
                 if (maxPreviewWidth > MAX_PREVIEW_WIDTH) {
                     maxPreviewWidth = MAX_PREVIEW_WIDTH;
                 }
